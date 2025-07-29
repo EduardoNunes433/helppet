@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #9333ea, #d946ef);
+  color: white;
+}
+
+header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../imagens/header-bg.png') center/cover no-repeat;
+  color: white;
+  padding: 60px 20px 30px;
+  text-align: center;
+  position: relative;
+  border-bottom: 5px solid #9333ea;
+}
+
+header h1 {
+  font-size: 48px;
+  margin: 0;
+  font-weight: 900;
+}
+
+header .icone-header {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+/* NAVEGAÇÃO */
+nav {
+  background-color: #6b21a8;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 0;
+  padding: 15px 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+
+/* FOOTER (opcional) */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #6b21a8;
+  color: #ddd6fe;
+  font-size: 14px;
+}

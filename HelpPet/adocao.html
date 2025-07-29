@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Adoção | HelpPet</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/adocao.css">
+  <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+</head>
+<body>
+
+<header class="header-adocao">
+  <h1>🐶 Adoção</h1>
+  <p>Encontre um amigo leal para levar pra casa!</p>
+</header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre Nós</a></li>
+      <li><a href="animaisperdidos.html">Animais Perdidos</a></li>
+      <li><a href="adocao.html">Adoção</a></li>
+    </ul>
+  </nav>
+
+  <section class="categorias">
+    <h2>Escolha uma categoria:</h2>
+    <div class="cards">
+      <div class="categoria">
+        <img src="imagens/cachorro_adocao.png" alt="Cachorro">
+        <button onclick="mostrar('cachorros')">Cachorros</button>
+      </div>
+      <div class="categoria">
+        <img src="imagens/gato_adocao.png" alt="Gato">
+        <button onclick="mostrar('gatos')">Gatos</button>
+      </div>
+      <div class="categoria">
+        <img src="imagens/outros_adocao.png" alt="Outros">
+        <button onclick="mostrar('outros')">Outros</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="cachorros" class="fichas oculto">
+    <h2>Cachorros Disponíveis</h2>
+    <div class="pet">
+      <img src="imagens/cachorro_adocao.png" alt="Fred">
+      <p><strong>Fred</strong><br>Idade: 3 meses<br>Raça: Salsicha<br>Vacinas em dia<br>Brincalhão e dócil<br>Não é castrado</p>
+      <a href="#" class="botao-adotar">Quero Adotar 🐾</a>
+    </div>
+    <div class="pet">
+      <img src="imagens/cachorro_adocao.png" alt="Lua">
+      <p><strong>Lua</strong><br>Idade: 2 anos<br>Raça: Vira-Lata<br>Vacinas em dia<br>Quietinha e carinhosa<br>Castrada</p>
+      <a href="#" class="botao-adotar">Quero Adotar 🐾</a>
+    </div>
+  </section>
+  <section id="gatos" class="fichas oculto">
+    <h2>Gatos Disponíveis</h2>
+    <div class="pet">
+      <img src="imagens/gato_adocao.png" alt="Mimi">
+      <p><strong>Mimi</strong><br>Idade: 1 ano<br>Raça: Siamês<br>Curiosa e carinhosa<br>Castrada</p>
+      <a href="#" class="botao-adotar">Quero Adotar 🐾</a>
+    </div>
+    <div class="pet">
+      <img src="imagens/gato_adocao.png" alt="Tom">
+      <p><strong>Tom</strong><br>Idade: 4 meses<br>Raça: Vira-lata<br>Brincalhão<br>Vacinas em dia</p>
+      <a href="#" class="botao-adotar">Quero Adotar 🐾</a>
+    </div>
+  </section>
+  <section id="outros" class="fichas oculto">
+    <h2>Outros Animais Disponíveis</h2>
+    <div class="pet">
+      <img src="imagens/outros_adocao.png" alt="Bilu">
+      <p><strong>Bilu</strong><br>Idade: 6 meses<br>Espécie: Coelho<br>Muito dócil<br>Vive bem em ambientes fechados</p>
+      <a href="#" class="botao-adotar">Quero Adotar 🐾</a>
+    </div>
+    <div class="pet">
+      <img src="imagens/outros_adocao.png" alt="Pipoca">
+      <p><strong>Pipoca</strong><br>Idade: 8 meses<br>Espécie: Hamster<br>Tranquilo e curioso<br>Precisa de gaiola adequada</p>
+      <a href="#" class="botao-adotar">Quero Adotar 🐾</a>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 HelpPet - Projeto Educacional HelpPet</p>
+  </footer>
+
+  
+  <script>
+    function mostrar(tipo) {
+      document.querySelectorAll('.fichas').forEach(secao => secao.classList.add('oculto'));
+      document.getElementById(tipo).classList.remove('oculto');
+    }
+  </script>
+
+</body>
+</html>
