@@ -1,0 +1,52 @@
+.header-sobre {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+  border-bottom: 4px solid #312e81;
+}
+
+.header-sobre h1 {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.header-sobre p {
+  font-size: 16px;
+}
+
+
+div p {
+    font-size: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 90px;
+    
+}
+
+div {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .header-sobre h1 {
+    font-size: 28px;
+  }
+
+  .header-sobre p {
+    font-size: 14px;
+  }
+
+  div p {
+    font-size: 20px;
+    margin-top: 40px;
+    padding: 0 15px;
+    text-align: justify;
+    line-height: 1.6;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 15px;
+  }
+}
