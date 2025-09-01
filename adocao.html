@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Encontre cães, gatos e outros pets para adoção com apoio de ONGs parceiras. Dê um novo lar para animais afetados pelas enchentes de 2024.">
+  <meta name="keywords" content="adoção de cães, adoção de gatos, pets para adoção, animais resgatados, adoção responsável, HelpPet">
+  <title>Adoção de Pets | HelpPet</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/adocao.css">
+  <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+
+</head>
+<body>
+
+  <header class="header-adocao">
+    <h1>Adoção</h1>
+    <p>Encontre um amigo leal para levar pra casa!</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre Nós</a></li>
+      <li><a href="animaisperdidos.html">Animais Perdidos</a></li>
+      <li><a href="adocao.html">Adoção</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Campo de busca -->
+    <section id="filtro-pets">
+      <h2>Procurar um pet</h2>
+      <div class="filtros">
+        <input type="text" id="search" placeholder="Digite nome, raça ou espécie..." oninput="debounceFiltrar()">
+        <div id="categorias">
+          <button onclick="filtrarCategoria(event, 'todos')">Todos</button>
+          <button onclick="filtrarCategoria(event, 'cachorro')">Cachorros</button>
+          <button onclick="filtrarCategoria(event, 'gato')">Gatos</button>
+          <button onclick="filtrarCategoria(event, 'outro')">Outros</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lista de pets -->
+    <section>
+      <h2>Todos os Pets Disponíveis</h2>
+      <div id="lista-pets">
+
+        <div class="pet-card" data-info="fred cachorro macho filhote salsicha vacinado dócil brincalhão não castrado" data-categoria="cachorro">
+          <img src="imagens/cachorro_adocao.png" alt="Fred">
+          <p class="pet-nome"><strong>Fred</strong></p>
+          <p class="descricao">
+            <span>🐾 <strong>Idade:</strong> 3 meses</span>
+            <span>🐶 <strong>Raça:</strong> Salsicha</span>
+            <span>💉 Vacinas em dia</span>
+            <span>🎾 Brincalhão e dócil</span>
+            <span>❌ Não é castrado</span>
+          </p>
+          <a href="https://forms.gle/K7sgsW7aUbj14qeN7" class="botao-adotar">Quero Adotar</a>
+        </div>
+
+        <div class="pet-card" data-info="lua cachorro fêmea adulta vira-lata vacinada quieta carinhosa castrada" data-categoria="cachorro">
+          <img src="imagens/cachorro_adocao.png" alt="Lua">
+          <p class="pet-nome"><strong>Lua</strong></p>
+          <p class="descricao">
+            <span>🐾 <strong>Idade:</strong> 2 anos</span>
+            <span>🐶 <strong>Raça:</strong> Vira-Lata</span>
+            <span>💉 Vacinas em dia</span>
+            <span>💤 Quietinha e carinhosa</span>
+            <span>✅ Castrada</span>
+          </p>
+          <a href="https://forms.gle/K7sgsW7aUbj14qeN7" class="botao-adotar">Quero Adotar</a>
+        </div>
+
+        <div class="pet-card" data-info="mimi gato fêmea jovem siamês vacinada curiosa carinhosa castrada" data-categoria="gato">
+          <img src="imagens/gato_adocao.png" alt="Mimi">
+          <p class="pet-nome"><strong>Mimi</strong></p>
+          <p class="descricao">
+            <span>🐾 <strong>Idade:</strong> 1 ano</span>
+            <span>🐱 <strong>Raça:</strong> Siamês</span>
+            <span>💉 Vacinas em dia</span>
+            <span>👀 Curiosa e carinhosa</span>
+            <span>✅ Castrada</span>
+          </p>
+          <a href="https://forms.gle/K7sgsW7aUbj14qeN7" class="botao-adotar">Quero Adotar</a>
+        </div>
+
+        <div class="pet-card" data-info="tom gato macho filhote vira-lata vacinado brincalhão castrado" data-categoria="gato">
+          <img src="imagens/gato_adocao.png" alt="Tom">
+          <p class="pet-nome"><strong>Tom</strong></p>
+          <p class="descricao">
+            <span>🐾 <strong>Idade:</strong> 4 meses</span>
+            <span>🐱 <strong>Raça:</strong> Vira-Lata</span>
+            <span>💉 Vacinas em dia</span>
+            <span>🎾 Brincalhão</span>
+            <span>✅ Castrado</span>
+          </p>
+          <a href="https://forms.gle/K7sgsW7aUbj14qeN7" class="botao-adotar">Quero Adotar</a>
+        </div>
+
+        <div class="pet-card" data-info="bilu coelho macho jovem dócil vacinado castrado" data-categoria="coelho">
+          <img src="imagens/outros_adocao.png" alt="Bilu">
+          <p class="pet-nome"><strong>Bilu</strong></p>
+          <p class="descricao">
+            <span>🐾 <strong>Idade:</strong> 6 meses</span>
+            <span>🐇 <strong>Espécie:</strong> Coelho</span>
+            <span>💉 Vacinas em dia</span>
+            <span>🤍 Muito dócil</span>
+            <span>✅ Castrado</span>
+          </p>
+          <a href="https://forms.gle/K7sgsW7aUbj14qeN7" class="botao-adotar">Quero Adotar</a>
+        </div>
+
+        <div class="pet-card" data-info="pipoca hamster fêmea jovem tranquila curiosa vacinada" data-categoria="hamster">
+          <img src="imagens/outros_adocao.png" alt="Pipoca">
+          <p class="pet-nome"><strong>Pipoca</strong></p>
+          <p class="descricao">
+            <span>🐾 <strong>Idade:</strong> 8 meses</span>
+            <span>🐹 <strong>Espécie:</strong> Hamster</span>
+            <span>💉 Vacinas em dia</span>
+            <span>😌 Tranquila e curiosa</span>
+            <span>⚠️ Não castrada</span>
+          </p>
+          <a href="https://forms.gle/K7sgsW7aUbj14qeN7" class="botao-adotar">Quero Adotar</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <p id="no-results" style="display:none;">Nenhum pet encontrado</p>
+  </main>
+
+  <footer>
+      <p>© 2025 HelpPet - Projeto Educacional HelpPet</p>
+      <div class="redes-sociais">
+          <a href="https://www.instagram.com/helppet_poa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+              <img src="imagens/instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://wa.me/5599999999999" target="_blank" aria-label="WhatsApp">
+              <img src="imagens/whatsapp.svg" alt="WhatsApp">
+          </a>
+      </div>
+  </footer>
+
+    <!-- JS dentro do HTML -->
+  <script>
+    // Categoria padrão = "todos"
+    let categoriaSelecionada = "todos";
+    let timeout; // usado no debounce da busca
+
+    // Função chamada ao clicar nos botões de categoria
+    function filtrarCategoria(event, categoria) {
+      // Se clicou de novo na mesma categoria ativa → reseta para "todos"
+      if (categoriaSelecionada === categoria) {
+        categoriaSelecionada = "todos";
+        // Remove "ativo" de todos os botões
+        document.querySelectorAll("#categorias button").forEach(btn => btn.classList.remove("ativo"));
+      } else {
+        categoriaSelecionada = categoria;
+        // Remove "ativo" de todos os botões
+        document.querySelectorAll("#categorias button").forEach(btn => btn.classList.remove("ativo"));
+        // Marca o botão clicado
+        event.target.classList.add("ativo");
+      }
+
+      filtrarPets();
+    }
+
+    // Função de busca + categoria
+    function filtrarPets() {
+      let termo = document.getElementById("search").value.toLowerCase();
+      let pets = document.querySelectorAll(".pet-card");
+      let count = 0;
+
+      pets.forEach(pet => {
+        let info = (pet.getAttribute("data-info") + " " + pet.innerText).toLowerCase();
+        let categoria = pet.getAttribute("data-categoria");
+
+        // Regras de categoria
+        let bateCategoria = false;
+        if (categoriaSelecionada === "todos") {
+          bateCategoria = true;
+        } else if (categoriaSelecionada === "outro") {
+          bateCategoria = (categoria !== "cachorro" && categoria !== "gato");
+        } else {
+          bateCategoria = (categoria === categoriaSelecionada);
+        }
+
+        // Busca por texto
+        let bateBusca = (info.includes(termo));
+
+        if (bateCategoria && bateBusca) {
+          pet.style.display = "block";
+          count++;
+        } else {
+          pet.style.display = "none";
+        }
+      });
+
+      // Mostra/oculta aviso "sem resultados"
+      document.getElementById("no-results").style.display = (count === 0) ? "block" : "none";
+    }
+
+    // Função debounce para evitar excesso de chamadas na busca
+    function debounceFiltrar() {
+      clearTimeout(timeout);
+      timeout = setTimeout(filtrarPets, 250); // espera 250ms após parar de digitar
+    }
+
+    // 📱 Botão "Quero Adotar" abre WhatsApp
+    document.querySelectorAll(".botao-adotar").forEach(botao => {
+      botao.addEventListener("click", (e) => {
+        e.preventDefault();
+        const petNome = botao.closest(".pet-card").querySelector(".pet-nome").innerText.trim();
+        const mensagem = encodeURIComponent(`Oi! Quero adotar o ${petNome} 🐾`);
+        window.open(`https://forms.gle/K7sgsW7aUbj14qeN7?text=${mensagem}`, "_blank");
+      });
+    });
+  </script>
+
+</body>
+</html>
