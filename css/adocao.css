@@ -1,0 +1,330 @@
+.header-adocao {
+  background: linear-gradient(135deg, #5b21b6, #a78bfa); /* violeta escuro -> lilás */
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+  border-bottom: 4px solid #4c1d95; /* borda mais escura */
+}
+
+.header-adocao h1 {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.header-adocao p {
+  font-size: 17px;
+}
+
+h2, h3 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  color: white; /* fica mais legível no fundo roxo */
+}
+
+/* ===============================
+   Filtro (Busca + Categorias)
+================================= */
+#filtro-pets {
+  text-align: center;
+  margin: 20px auto;
+}
+
+#filtro-pets .filtros {
+  display: flex;
+  flex-direction: column; /* empilha em telas menores */
+  align-items: center;
+  gap: 12px;
+}
+
+/* Caixa de busca */
+#search {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#search:focus {
+  border-color: #9333ea;
+  box-shadow: 0 0 8px rgba(147, 51, 234, 0.6);
+}
+
+/* Botões de categorias */
+#categorias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+#categorias button {
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+  flex: 1;
+  min-width: 120px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+#categorias button:hover {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  transform: translateY(-2px);
+}
+
+#categorias button.ativo {
+  background: linear-gradient(135deg, #9333ea, #d946ef);
+  color: white;
+  border-color: #9333ea;
+  box-shadow: 0 4px 10px rgba(147, 51, 234, 0.4);
+}
+
+#no-results {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* ===============================
+   Lista de Pets (grid)
+================================= */
+#lista-pets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin: 30px auto;
+  padding: 0 20px;
+  max-width: 1200px;
+  justify-content: center; /* garante centralização */
+}
+
+.pet-nome {
+  text-align: center;
+  font-size: 18px;
+  color: #9333ea;
+}
+
+.pet-card {
+  background: rgba(255,255,255,0.95);
+  padding: 18px;
+  border-radius: 16px;
+  border: 5px solid #333;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: #333;
+
+  /* 👇 limite para não virar “quadradão” */
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+}
+
+.pet-card img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;  /* mantém proporção da área */
+  max-height: 320px;    /* altura máxima pra não esticar demais */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.carousel img {
+  position: absolute;
+  inset: 0;             /* ocupa toda a área do carrossel */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* cobre a área sem distorcer */
+  opacity: 0;           /* começa invisível */
+  transition: opacity 0.3s ease;
+}
+
+.carousel img.active {
+  opacity: 1;           /* só a imagem ativa aparece */
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.carousel .prev { left: 5px; }
+.carousel .next { right: 5px; }
+
+/* ===============================
+   Descrição dos Pets
+================================= */
+.descricao {
+  background: #f9f9fb;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+  text-align: center; /* centraliza */
+  margin: 10px auto;
+  max-width: 90%;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.descricao br {
+  display: none; /* some com as quebras manuais */
+}
+
+.descricao p,
+.descricao span {
+  display: block;
+  margin: 4px 0;
+}
+
+.descricao strong {
+  color: #9333ea;
+  font-weight: 600;
+}
+
+/* ===============================
+   Botão "Quero Adotar"
+================================= */
+.botao-adotar {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: linear-gradient(to right, #9333ea, #d946ef);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.botao-adotar:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.botao-adotar:active {
+  transform: scale(0.95);
+}
+
+/* Tablet / Mobile */
+@media (max-width: 768px) {
+
+  #search {
+    max-width: 320px; /* não vai até a borda em tablets/celulares maiores */
+    margin: 0 auto;   /* centraliza */
+  }
+
+  .header-adocao h1 {
+    font-size: 32px;
+  }
+
+  .header-adocao p {
+    font-size: 15px;
+  }
+
+  #filtro-pets .filtros {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #categorias {
+    width: 95%;
+    margin-top: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #categorias button {
+    min-width: 100px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  #lista-pets {
+    grid-template-columns: 1fr 1fr; /* 2 colunas */
+    gap: 15px;
+  }
+
+  .pet-card {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .pet-nome {
+    font-size: 16px;
+  }
+
+  .botao-adotar {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  /* controla carrossel no tablet */
+  .carousel {
+    max-height: 260px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Telas bem pequenas (celular compacto) */
+@media (max-width: 480px) {
+
+  #search {
+    max-width: 260px; /* ainda mais compacto em celulares pequenos */
+    margin: 0 auto;
+  }
+
+  #categorias {
+    margin-top: 5px;
+  }
+
+  .header-adocao h1 {
+    font-size: 26px;
+  }
+
+  .header-adocao p {
+    font-size: 14px;
+  }
+
+  #lista-pets {
+    grid-template-columns: 1fr; /* só 1 coluna */
+  }
+
+  .carousel {
+    max-height: 200px;
+    aspect-ratio: 4 / 3;
+  }
+}

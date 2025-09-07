@@ -1,0 +1,100 @@
+.header-sobre {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+  border-bottom: 4px solid #312e81;
+}
+
+.header-sobre h1 {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.header-sobre p {
+  font-size: 16px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 70vh; /* deixa centralizado no espaço disponível */
+  text-align: center;
+  padding: 40px 20px;
+}
+
+main div {
+  max-width: 800px;
+}
+
+main h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #8f8ad0;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+main h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: #6366f1;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+main p {
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  main {
+    padding: 20px;
+    align-items: flex-start; /* não centraliza no meio da tela */
+    min-height: auto; /* remove o 70vh no mobile */
+    text-align: left; /* leitura mais confortável */
+  }
+
+  main div {
+    max-width: 100%; /* aproveita toda a largura */
+  }
+
+  main h2 {
+    font-size: 22px;
+  }
+
+  main p {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: left; /* melhor em telas pequenas */
+  }
+}
+
+/* Extra para telas bem pequenas */
+@media (max-width: 480px) {
+  .header-sobre h1 {
+    font-size: 28px;
+  }
+
+  .header-sobre p {
+    font-size: 14px;
+  }
+
+  main h2 {
+    font-size: 20px;
+  }
+
+  main p {
+    font-size: 14px;
+  }
+}
